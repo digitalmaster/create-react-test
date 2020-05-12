@@ -11,17 +11,17 @@ workflows:
     jobs:
       - build
       - test
-      
+
 jobs:
   build:
     executor: node
     steps:
       - checkout
-      - npm run install
-      - npm run build
+      - run: npm run install
+      - run: npm run build
   test:
     executor: node
     steps:
       - checkout
-      - npm run install
-      - npm run test
+      - run: npm run install
+      - run: npm run test
